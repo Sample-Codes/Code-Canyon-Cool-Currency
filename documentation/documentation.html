@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cool Currency Converter</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/jumbotron-narrow.css" rel="stylesheet">
+    </head>
+	<body>
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li role="presentation" class="active"><a href="#">Documentation</a></li>
+                        <li role="presentation"><a href="http://www.creatorsgarage.com/envato/cool-currency-converter" target="_blank">Demo</a></li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted">Cool Currency Converter</h3>
+            </div>
+            <div class="jumbotron" style="padding-top:10px; padding-bottom:20px">
+                <h2>Cool Currency Converter</h2>
+                <p>Cool currency converter is a jQuery plugin run with php functions to create a simple and a cool currency conversion widget.</p>
+                <p>
+                    <a class="btn btn-lg btn-success" href="http://www.creatorsgarage.com/envato/cool-currency-converter" role="button">You can try it</a>
+                </p>
+            </div>
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h4>Install</h4>
+                    <p>
+                    	There are a few requirements you need to meet before you can use cool currency converter.<br>
+                        You need to include font-awesome, less-compiler, and our less file <b>into your html head</b>
+                    </p>
+                    <pre>&#60;link rel="stylesheet" href="ccc-webroot/css/font-awesome-4.3.0/css/font-awesome.min.css"&#62;<br>&#60;link rel="stylesheet/less" href="ccc-webroot/css/ccc-styles.less" type="text/css"&#62;<br>&#60;script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"&#62;&#60;/script&#62;</pre>
+                    <br>
+                    <p>
+                        Then you need to call jQuery, and Cool Currency Converter JS file <b>in the end of your html body</b><br>
+                    </p>
+                    <pre>&#60;script type="text/javascript" src="ccc-webroot/js/jquery-1.9.1.min.js"&#62;&#60;/script&#62;<br>&#60;script type="text/javascript" src="ccc-webroot/js/ccc-1.0.js""&#62;&#60;/script&#62;</pre>
+                    </p>
+          
+                    <h4>PHP</h4>
+                    <p>You need to add this php code to your php file to be able to call cool currency converter</p>
+                    <pre>&#60;?php
+    require_once "CoolCurrencyConverter.php";
+    $ccc = new CoolCurrencyConverter();
+?></pre>
+                    
+                    <p>You need to add this php code in your page to add the cool currency converter</p>
+<pre>&#60;?php
+    $ccc->create(
+    	array(
+    	    "template"=>"vertical", //["horizontal", "vertical"]
+            "color"=>"green", //["blue", "green", "orange", "red", "custom"]
+            "border"=> true //you can remove border by making "border" => false
+    	)
+    ); 
+?></pre>
+					<p>
+                    	<b>Template:</b><br>
+                        by default template is vertical and you can choose between Horizontal and vertical oriontaions<br><br>
+                        <b>color:</b><br>
+                        by default color is blue and you can chose between(blue, green, orange, red). You can chouse you custom color by choosing "custom" as color, but then you have to go edit the ccc-styles.less file located in ccc-webroot/css/ and modify the values of custom colors:<br>
+<pre>@color-custom		: #8b2bdc;
+@color-custom-rgb-3	: rgba(139, 43, 220, .3);
+@color-custom-rgb-7	: rgba(139, 43, 220, .7);
+</pre>
+                        <br>
+                        <b>border:</b><br>
+                        by default border is true and you can remove it by turning border to false
+                    </p>
+                    <h4>Ajax call</h4>
+                    <p>Cool currency code use ajax to get the currency result trow a php file"ajax.php". If you need to change the ajax call url u can edit the "ccc-1.0.js" file located on "ccc-webroot/js/" and edit the ajax_url config</p>
+                </div>
+          </div>
+        </div>
+        <script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
+
